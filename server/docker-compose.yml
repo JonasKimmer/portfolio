@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  # MongoDB Service
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - app-network
+    restart: always
+
+  # Node.js API Service
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: adaptive-ui-api
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGO_URI=mongodb://mongodb:27017/adaptive-ui-tracker
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+    restart: always
+
+# Docker Volumes
+volumes:
+  mongo_data:
+
+# Docker Networks
+networks:
+  app-network:
+    driver: bridge 
