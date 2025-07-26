@@ -2,10 +2,75 @@
 <html>
 <head>
     <title>Portfolio API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        p {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .status {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #4CAF50;
+            margin-right: 10px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        .api-links {
+            margin-top: 30px;
+        }
+        .api-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .api-links a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+    </style>
 </head>
 <body>
-    <h1>Portfolio API ist aktiv</h1>
-    <p>Backend läuft auf Netlify Functions</p>
-    <p>MongoDB Atlas verbunden</p>
+    <div class="container">
+        <h1>Portfolio API</h1>
+        <p><span class="status"></span>Backend läuft auf Netlify Functions</p>
+        <p><span class="status"></span>MongoDB Atlas verbunden</p>
+        <p><span class="status"></span>API ist aktiv und bereit</p>
+        
+        <div class="api-links">
+            <a href="/.netlify/functions/api/ping">API Ping Test</a>
+            <a href="/.netlify/functions/api/health">Health Check</a>
+        </div>
+    </div>
 </body>
 </html> 
