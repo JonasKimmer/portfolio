@@ -1,6 +1,10 @@
 {
   "builds": [
     {
+      "src": "build/web/**",
+      "use": "@vercel/static"
+    },
+    {
       "src": "server/server.js",
       "use": "@vercel/node"
     }
@@ -12,7 +16,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/web/$1"
+      "dest": "/build/web/$1"
     }
   ],
   "functions": {
