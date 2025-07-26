@@ -8,7 +8,7 @@ import '../models/sensor_data.dart';
 import '../data/db_helper.dart';
 
 class SensorSyncService with ChangeNotifier {
-static const String _baseUrl = 'https://portfolio-bjatv9ae2-jonas-kimmerinfos-projects.vercel.app/api';
+static const String _baseUrl = 'https://portfoliojonaskimmer.netlify.app/.netlify/functions/api';
   
   // Abhängigkeiten
   final DBHelper _dbHelper;

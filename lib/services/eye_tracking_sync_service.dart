@@ -10,7 +10,7 @@ import '../models/eye_tracking_data.dart';
 import '../data/db_helper.dart';
 
 class EyeTrackingSyncService with ChangeNotifier {
-static const String _baseUrl = 'https://portfolio-bjatv9ae2-jonas-kimmerinfos-projects.vercel.app/api';
+static const String _baseUrl = 'https://portfoliojonaskimmer.netlify.app/.netlify/functions/api';
 
   // Abhängigkeiten
   final DBHelper _dbHelper;

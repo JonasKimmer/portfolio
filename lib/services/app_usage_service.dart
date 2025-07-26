@@ -19,7 +19,7 @@ class AppUsageService extends ChangeNotifier {
   final DBHelper _dbHelper = DBHelper();
   String? _currentPackageName;
 
-  static const String baseUrl = 'https://portfolio-bjatv9ae2-jonas-kimmerinfos-projects.vercel.app/api/appusage';
+  static const String baseUrl = 'https://portfoliojonaskimmer.netlify.app/.netlify/functions/api/appusage';
   static const String appOpenCountKey = 'app_open_count';
   static const String lastOpenDateKey = 'last_open_date';
   static const String totalUsageSecondsKey = 'total_usage_seconds';

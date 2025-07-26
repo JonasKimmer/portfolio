@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../data/db_helper.dart';
 
 class AppUsageSyncService with ChangeNotifier {
-  static const String _baseUrl = 'https://portfolio-bjatv9ae2-jonas-kimmerinfos-projects.vercel.app/api';
+  static const String _baseUrl = 'https://portfoliojonaskimmer.netlify.app/.netlify/functions/api';
 
   // Abhängigkeiten
   final DBHelper _dbHelper;

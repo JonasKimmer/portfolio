@@ -330,10 +330,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Future<bool> _pingServer() async {
     try {
-      print('Versuche Server-Ping an: https://portfolio-bjatv9ae2-jonas-kimmerinfos-projects.vercel.app/api/ping');
+      print('Versuche Server-Ping an: https://portfoliojonaskimmer.netlify.app/.netlify/functions/api/ping');
       try {
         final pingResponse = await http.get(
-          Uri.parse('https://portfolio-bjatv9ae2-jonas-kimmerinfos-projects.vercel.app/api/ping')
+          Uri.parse('https://portfoliojonaskimmer.netlify.app/.netlify/functions/api/ping')
         ).timeout(Duration(seconds: 5));
         print('Server Ping-Antwort: ${pingResponse.statusCode} ${pingResponse.body}');
         if (pingResponse.statusCode == 200) {
@@ -347,7 +347,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       // Als Fallback versuchen wir den Device-Endpunkt
       try {
         final deviceResponse = await http.get(
-          Uri.parse('https://portfolio-bjatv9ae2-jonas-kimmerinfos-projects.vercel.app/api/device')
+          Uri.parse('https://portfoliojonaskimmer.netlify.app/.netlify/functions/api/device')
         ).timeout(Duration(seconds: 5));
         print('Server Device-Endpunkt-Antwort: ${deviceResponse.statusCode}');
         return deviceResponse.statusCode == 200 || deviceResponse.statusCode == 404; // 404 ist auch OK, bedeutet der Endpunkt existiert
@@ -357,7 +357,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       
       try {
         final rootResponse = await http.get(
-          Uri.parse('https://portfolio-bjatv9ae2-jonas-kimmerinfos-projects.vercel.app/')
+          Uri.parse('https://portfoliojonaskimmer.netlify.app/')
         ).timeout(Duration(seconds: 5));
         print('Root-Endpunkt-Antwort: ${rootResponse.statusCode}');
         return true; // Wenn wir hier ankommen, ist zumindest der Server erreichbar
