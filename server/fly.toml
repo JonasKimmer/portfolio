@@ -1,0 +1,23 @@
+app = "portfolio-api"
+primary_region = "fra"
+
+[build]
+
+[env]
+  NODE_ENV = "production"
+  MONGODB_URI = "mongodb+srv://jonaskimmer:Kk4y7STCSSXbaqOI@cluster0.ujpcvhz.mongodb.net/adaptive-ui-tracker?retryWrites=true&w=majority"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[http_service.checks]]
+  grace_period = "10s"
+  interval = "30s"
+  method = "GET"
+  timeout = "5s"
+  path = "/api/ping" 

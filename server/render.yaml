@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: portfolio-api
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGODB_URI
+        value: mongodb+srv://jonaskimmer:Kk4y7STCSSXbaqOI@cluster0.ujpcvhz.mongodb.net/adaptive-ui-tracker?retryWrites=true&w=majority
+      - key: NODE_ENV
+        value: production 

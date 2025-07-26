@@ -1,0 +1,13 @@
+[build]
+  command = "npm install"
+  publish = "public"
+  functions = "functions"
+
+[build.environment]
+  NODE_ENV = "production"
+  MONGODB_URI = "mongodb+srv://jonaskimmer:Kk4y7STCSSXbaqOI@cluster0.ujpcvhz.mongodb.net/adaptive-ui-tracker?retryWrites=true&w=majority"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200 
