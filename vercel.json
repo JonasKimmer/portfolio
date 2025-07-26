@@ -1,20 +1,14 @@
 {
-  "buildCommand": "",
-  "outputDirectory": "build/web",
-  "builds": [
+  "functions": {
+    "server/server.js": {
+      "runtime": "@vercel/node@3"
+    }
+  },
+  "rewrites": [
     {
-      "src": "server/server.js",
-      "use": "@vercel/node"
+      "source": "/api/(.*)",
+      "destination": "/server/server.js"
     }
   ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/server/server.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/build/web/index.html"
-    }
-  ]
+  "outputDirectory": "build/web"
 }
