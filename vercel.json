@@ -1,9 +1,20 @@
 {
-  "rewrites": [
+  "buildCommand": "",
+  "outputDirectory": "build/web",
+  "builds": [
     {
-      "source": "/api/(.*)",
-      "destination": "/server/server.js"
+      "src": "server/server.js",
+      "use": "@vercel/node"
     }
   ],
-  "buildCommand": "flutter build web"
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/server/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/build/web/$1"
+    }
+  ]
 }
