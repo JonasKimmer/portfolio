@@ -11,7 +11,7 @@ import '../models/device_info.dart';
 import '../data/db_helper.dart';
 
 class DeviceSyncService with ChangeNotifier {
-  static const String _baseUrl = 'http://localhost:3000/api';
+  static const String _baseUrl = 'https://portfolio-bjatv9ae2-jonas-kimmerinfos-projects.vercel.app/api';
 
   final DBHelper _dbHelper = DBHelper();
   final DeviceInfoPlugin _deviceInfo = DeviceInfoPlugin();

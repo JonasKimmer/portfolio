@@ -10,7 +10,7 @@ import 'dart:io' show Platform;
 
 class TouchSyncService with ChangeNotifier {
   // Korrigierte URL
-static const String _baseUrl = 'http://localhost:3000/api';
+static const String _baseUrl = 'https://portfolio-bjatv9ae2-jonas-kimmerinfos-projects.vercel.app/api';
   
   // Abhängigkeiten
   final DBHelper _dbHelper = DBHelper();

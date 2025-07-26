@@ -172,8 +172,8 @@ class TouchService extends ChangeNotifier {
         return;
       }
 
-      final response = await http.post(
-        Uri.parse('http://localhost:3000/api/touch'), // URL geändert von /api/touch/bulk
+              final response = await http.post(
+          Uri.parse('https://portfolio-bjatv9ae2-jonas-kimmerinfos-projects.vercel.app/api/touch'), // URL geändert von /api/touch/bulk
         headers: {'Content-Type': 'application/json'},
         body: json.encode({'touchData': touchPoints.map((point) => {
           'timestamp': point.timestamp,
