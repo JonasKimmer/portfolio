@@ -1,7 +1,7 @@
 [build]
   command = "npm install"
   publish = "public"
-  functions = "functions"
+  functions = "netlify/functions"
 
 [build.environment]
   NODE_ENV = "production"
