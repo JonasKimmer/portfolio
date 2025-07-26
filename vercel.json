@@ -1,27 +1,9 @@
 {
-  "builds": [
+  "rewrites": [
     {
-      "src": "build/web/**",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "server/server.js",
-      "use": "@vercel/node"
+      "source": "/api/(.*)",
+      "destination": "/server/server.js"
     }
   ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/server/server.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/build/web/$1"
-    }
-  ],
-  "functions": {
-    "server/server.js": {
-      "runtime": "@vercel/node"
-    }
-  }
+  "buildCommand": "flutter build web"
 }
